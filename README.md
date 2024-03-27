@@ -5,7 +5,8 @@
 O objetivo deste projeto é desmontrar como consumir dados de uma api de filmes, usando react e axios, bem como a componentização da aplicação. Ao longo do desenvolvimento foram utilizados:
 
 * Hooks: useState, useEffect, useParams, useNavigate;
-* Axios para fazer as requisições a api.
+* Axios para fazer as requisições a api;
+* Toastify para gerar alertas personalizados para o usuário.
 
 
 Funcionamento: 
