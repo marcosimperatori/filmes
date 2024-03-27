@@ -25,7 +25,9 @@ Para utilizar esta api é necessário realizar um cadastro, a partir do qual ser
 
 ```npm install``` 
 
-e na sequencia: ```npm run dev```
+e na sequencia:
+
+ ```npm run dev```
 
 ## Importante:
 
