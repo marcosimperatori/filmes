@@ -26,7 +26,7 @@ const Home = () => {
     async function loadFilmes() {
       const response = await api.get("movie/now_playing", {
         params: {
-          api_key: "5849607720dfc0d2471e5d29d9b87cac",
+          api_key: "sua chave aqui",
           language: "pt-BR",
           page: pagina,
         },
