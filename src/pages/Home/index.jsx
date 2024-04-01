@@ -10,13 +10,25 @@ const Home = () => {
   const [filme, setFilmes] = useState([]);
   const [loading, setLoad] = useState(true);
 
+  const [pagina, setPagina] = useState(1);
+
+  const handleClickAnterior = () => {
+    if (pagina > 1) {
+      setPagina(pagina - 1);
+    }
+  };
+
+  const handleClickProximo = () => {
+    setPagina(pagina + 1);
+  };
+
   useEffect(() => {
     async function loadFilmes() {
       const response = await api.get("movie/now_playing", {
         params: {
-          api_key: "sua chave aqui",
+          api_key: "5849607720dfc0d2471e5d29d9b87cac",
           language: "pt-BR",
-          page: 1,
+          page: pagina,
         },
       });
       console.log(response.data.results);
@@ -25,7 +37,7 @@ const Home = () => {
     }
 
     loadFilmes();
-  }, []);
+  }, [pagina]);
 
   if (loading) {
     return (
@@ -36,22 +48,28 @@ const Home = () => {
   }
 
   return (
-    <div className="container">
-      <div className="row row-cols-1 row-cols-md-5 g-3">
-        {filme.map((filme) => {
-          return (
-            <div className="col" key={filme.id}>
-              <Card
-                titulo={filme.title}
-                imagem={`https://image.tmdb.org/t/p/original/${filme.poster_path}`}
-                descricao={filme.overview}
-                id={filme.id}
-              />
-            </div>
-          );
-        })}
+    <>
+      <div className="container">
+        <div className="row row-cols-1 row-cols-md-5 g-3">
+          {filme.map((filme) => {
+            return (
+              <div className="col" key={filme.id}>
+                <Card
+                  titulo={filme.title}
+                  imagem={`https://image.tmdb.org/t/p/original/${filme.poster_path}`}
+                  descricao={filme.overview}
+                  id={filme.id}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
+      <div className="navegacao">
+        <button onClick={handleClickAnterior}>Página anterior</button>
+        <button onClick={handleClickProximo}>Próxima página</button>
+      </div>
+    </>
   );
 };
 

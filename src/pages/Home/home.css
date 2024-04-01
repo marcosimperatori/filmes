@@ -47,3 +47,22 @@
   margin-top: 34px;
   color: #FFF;
 }
+
+.navegacao {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 700px;
+  margin: 0 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.navegacao button {
+  background-color: #0073b7; /* Cor de fundo azul */
+  color: #ffffff; /* Cor da fonte branca */
+  border: 1px solid #0073b7; /* Borda azul de 1px */
+  border-radius: 5px; /* Arredonda os cantos dos botões */
+  padding: 5px 10px; /* Aumenta o espaçamento interno */
+  margin-right: 14px;
+}

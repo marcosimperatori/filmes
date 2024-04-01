@@ -43,7 +43,7 @@ Nos trechos onde existir o código a seguir, é necessário que você insira a s
     });
 ```
 
-Até então a lista de favoritos é salvo no próprio navegador do usuário, em localStorage, com a chave @topfilmes.
+Até então a lista de favoritos é salvo no próprio navegador do usuário, em localStorage, com a chave @topfilmes. Ao final da página tem dois botões que permitem a navegação pela lista de filmes que a api fornece.
 
 A seguir algumas fotos da aplicação:
 

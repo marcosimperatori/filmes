@@ -17,7 +17,7 @@ const Filme = () => {
       await api
         .get(`/movie/${id}`, {
           params: {
-            api_key: "sua chave aqui",
+            api_key: "5849607720dfc0d2471e5d29d9b87cac",
             language: "pt-BR",
           },
         })
@@ -34,21 +34,25 @@ const Filme = () => {
     loadFilme();
   }, [navigate, id]);
 
-  function salvarFilmes(){
+  function salvarFilmes() {
     const minhaLista = localStorage.getItem("@topfilmes");
 
     let filmesAdd = JSON.parse(minhaLista) || [];
 
-    const hasFilme = filmesAdd.some((filmesSalvo) => filmesSalvo.id === filme.id)
+    const hasFilme = filmesAdd.some(
+      (filmesSalvo) => filmesSalvo.id === filme.id
+    );
 
-    if(hasFilme){
-      toast.warn("Este filme já foi adicionado antes!")
-      return
+    if (hasFilme) {
+      toast.warn("Este filme já foi adicionado antes!");
+      return;
     }
 
     filmesAdd.push(filme);
-    localStorage.setItem("@topfilmes", JSON.stringify(filmesAdd))
-    toast.success("Filme adicionado a sua lista com sucesso!",{theme:"colored"})
+    localStorage.setItem("@topfilmes", JSON.stringify(filmesAdd));
+    toast.success("Filme adicionado a sua lista com sucesso!", {
+      theme: "colored",
+    });
   }
 
   if (loading) {
